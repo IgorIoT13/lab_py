@@ -1,11 +1,14 @@
-import Garden
+from model.botanic_garden import Botanic_garden
+from model.university_garden import University_garden
+from managers.garden_manager import Garden_manager
 
-garden = Garden.Garden(1 , True, False, 10)
+garden = Garden_manager()
 
-garden.public_print_all_stats_object()
+garden.add_to_garden(Botanic_garden(1, 2, 1))
+garden.add_to_garden(University_garden(1, 2, 4))
 
-garden.public_plant_flower(15)
-garden.public_add_vegetable_region(10)
-garden.public_remove_flower(3)
+print(garden.get_greenhouse_count_max(2))
+print(garden.get_sculpture_count_max(2))
 
-garden.public_print_all_stats_object()
+
+print(garden.__str__())
