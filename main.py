@@ -1,14 +1,28 @@
-from model.botanic_garden import Botanic_garden
-from model.university_garden import University_garden
-from managers.garden_manager import Garden_manager
+from model.botanic_garden import BotanicGarden
+from model.university_garden import UniversityGarden
+from managers.garden_manager import GardenManager
 
-garden = Garden_manager()
+garden = GardenManager()
 
-garden.add_to_garden(Botanic_garden(1, 2, 1))
-garden.add_to_garden(University_garden(1, 2, 4))
+garden.add_to_garden(BotanicGarden(2, 1, 0))
 
-print(garden.get_greenhouse_count_max(2))
-print(garden.get_sculpture_count_max(2))
+garden.add_to_garden(BotanicGarden(3, 2, 1))
+garden.add_to_garden(BotanicGarden(2, 3, 0))
+garden.add_to_garden(BotanicGarden(1, 4, 1))
 
 
-print(garden.__str__())
+garden.add_to_garden(UniversityGarden(10, 20, 40))
+
+
+print(garden.area_count_max(5))
+
+print(garden.flower_count_max(5))
+
+print(garden.enumerate())
+
+print(garden.zip())
+
+print(garden.method_to_return_type(int))
+
+result = garden.checker(lambda garden: garden._garden_area < 100)
+print(result)
