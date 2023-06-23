@@ -4,6 +4,8 @@ from model.garden import Garden
 
 class Clumba(Garden):
     """Simulation real clumba"""
+    def __init__(self, area, flower):
+        super().__init__(area, flower, {"Flower"})
 
     def has_orchard(self):
         """return status orchard in garden"""

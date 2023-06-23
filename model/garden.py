@@ -1,14 +1,19 @@
 """Student Ihor IR-13 """
 
-
 from abc import ABC, abstractmethod
+
+
 class Garden(ABC):
     """ Class garden imitate garden"""
 
-    def __init__(self, area: int = 0, flower: int = 0):
+    def __init__(self, area: int = 0, flower: int = 0, garden={}):
         """constructor class"""
         self._garden_area = area
         self._garden_number_of_flower = flower
+        self._garden_str = garden
+
+    def __iter__(self):
+        return self._garden_str
 
     @staticmethod
     def min_area(min_area, *args):
@@ -19,7 +24,6 @@ class Garden(ABC):
             result_str += str(res)
 
         return result_str
-
 
     @abstractmethod
     def has_orchard(self):
@@ -52,4 +56,5 @@ class Garden(ABC):
         return f"area: {self._garden_area}, " \
                f"orchard: {self.has_orchard()}, " \
                f"vegetable garden: {self.has_vegetable_garden()}, " \
-               f"flower: {self._garden_number_of_flower}"
+               f"flower: {self._garden_number_of_flower} " \
+               f"List: {self._garden_str} "
