@@ -9,8 +9,9 @@ class UniversityGarden(Garden):
     def __init__(self, area: int = 0, flower: int = 0, count_sculpture: int = 0):
         """Constructor"""
 
-        super().__init__(area, flower)
+        super().__init__(area, flower, {"Big sculpture", "Rose"})
         self._count_sculpture = count_sculpture
+
 
     def get_count_sculpture(self):
         """return greenhouses to use it in code"""

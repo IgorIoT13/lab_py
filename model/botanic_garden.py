@@ -10,7 +10,7 @@ class BotanicGarden(Garden):
     def __init__(self, area: int = 0, flower: int = 0, count_greenhouses: int = 0):
         """Constructor"""
 
-        super().__init__(area, flower)
+        super().__init__(area, flower, {"Tomato", "potato"})
         self._count_greenhouses = count_greenhouses
 
     def get_count_greenhouses(self):
